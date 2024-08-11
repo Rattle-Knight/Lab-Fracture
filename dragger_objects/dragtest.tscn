@@ -1,17 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://cel0v0k5v7go4"]
+[gd_scene load_steps=5 format=3 uid="uid://cel0v0k5v7go4"]
 
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="1_27ut7"]
+[ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://tablet.tscn" id="1_x8opp"]
+[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="2_8a3ck"]
+[ext_resource type="Texture2D" uid="uid://dmtegotymset4" path="res://icon.svg" id="3_0os1h"]
 
 [node name="dragtest" type="Node2D"]
 
-[node name="dragableobject" parent="." instance=ExtResource("1_27ut7")]
-position = Vector2(320, 165)
+[node name="tablet" parent="." instance=ExtResource("1_x8opp")]
 
-[node name="dragableobject2" parent="." instance=ExtResource("1_27ut7")]
-position = Vector2(588, 195)
+[node name="labpiece" parent="." groups=["labs"] instance=ExtResource("2_8a3ck")]
+position = Vector2(408, 183)
 
-[node name="dragableobject3" parent="." instance=ExtResource("1_27ut7")]
-position = Vector2(136, 183)
+[node name="Icon" type="Sprite2D" parent="labpiece"]
+modulate = Color(0.788235, 0.580392, 0.25098, 1)
+z_index = -1
+position = Vector2(1, -6)
+texture = ExtResource("3_0os1h")
 
-[node name="dragableobject4" parent="." instance=ExtResource("1_27ut7")]
-position = Vector2(645, 436)
+[node name="labpiece2" parent="." groups=["labs"] instance=ExtResource("2_8a3ck")]
+position = Vector2(776, 108)
+
+[node name="Icon" type="Sprite2D" parent="labpiece2"]
+z_index = -1
+position = Vector2(3, 2)
+texture = ExtResource("3_0os1h")
+
+[node name="labpiece3" parent="." groups=["labs"] instance=ExtResource("2_8a3ck")]
+position = Vector2(950, 262)
+
+[node name="Icon" type="Sprite2D" parent="labpiece3"]
+modulate = Color(1, 0, 1, 1)
+z_index = -1
+position = Vector2(-2, -7)
+texture = ExtResource("3_0os1h")
+
+[node name="dragableobject" parent="." groups=["pieces"] instance=ExtResource("1_27ut7")]
+position = Vector2(351, 447)
+
+[node name="Icon" type="Sprite2D" parent="dragableobject"]
+modulate = Color(0.756863, 0.592157, 0.321569, 1)
+z_index = -1
+position = Vector2(-3, -2)
+texture = ExtResource("3_0os1h")
+
+[node name="dragableobject2" parent="." groups=["pieces"] instance=ExtResource("1_27ut7")]
+position = Vector2(662, 356)
+
+[node name="Icon" type="Sprite2D" parent="dragableobject2"]
+z_index = -1
+position = Vector2(-3, 5)
+texture = ExtResource("3_0os1h")
+
+[node name="dragableobject3" parent="." groups=["pieces"] instance=ExtResource("1_27ut7")]
+position = Vector2(163, 275)
+
+[node name="Icon" type="Sprite2D" parent="dragableobject3"]
+modulate = Color(1, 0, 1, 1)
+z_index = -1
+position = Vector2(2, 2)
+texture = ExtResource("3_0os1h")

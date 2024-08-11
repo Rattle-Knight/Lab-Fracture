@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://xajyua0o5f2t"]
+
+[ext_resource type="Script" path="res://dragger_objects/ObjectPositionInisitilaiser.gd" id="1_0sn15"]
+
+[node name="tablet" type="Node2D"]
+
+[node name="ObjectPositionInisitilaiser" type="Node" parent="."]
+script = ExtResource("1_0sn15")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 118.0
+offset_bottom = 93.0
+text = "UPDATE POS"
+
+[connection signal="pressed" from="Button" to="ObjectPositionInisitilaiser" method="_on_button_pressed"]
