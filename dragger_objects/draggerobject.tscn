@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bejgajpcjfb21"]
+
+[ext_resource type="Script" path="res://dragger_objects/dragableobject.gd" id="1_kum6o"]
+[ext_resource type="Texture2D" uid="uid://dmtegotymset4" path="res://icon.svg" id="2_kp61f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqbt"]
+size = Vector2(129, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8q3c"]
+size = Vector2(129, 127)
+
+[node name="dragableobject" type="CharacterBody2D"]
+script = ExtResource("1_kum6o")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_kp61f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_cmqbt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_o8q3c")
+debug_color = Color(0.501961, 0.560784, 0.423529, 0.419608)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cel0v0k5v7go4"]
+
+[ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="1_27ut7"]
+
+[node name="dragtest" type="Node2D"]
+
+[node name="dragableobject" parent="." instance=ExtResource("1_27ut7")]
+position = Vector2(320, 165)
+
+[node name="dragableobject2" parent="." instance=ExtResource("1_27ut7")]
+position = Vector2(588, 195)
+
+[node name="dragableobject3" parent="." instance=ExtResource("1_27ut7")]
+position = Vector2(136, 183)
+
+[node name="dragableobject4" parent="." instance=ExtResource("1_27ut7")]
+position = Vector2(645, 436)
