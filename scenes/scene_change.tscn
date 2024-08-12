@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dicvig52wy4e7"]
+
+[ext_resource type="Script" path="res://scripts/sceneChange.gd" id="1_uvwp8"]
+
+[node name="sceneChange" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_uvwp8")
+connected_scene = "inside"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
