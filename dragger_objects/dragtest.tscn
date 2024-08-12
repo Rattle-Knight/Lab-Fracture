@@ -11,7 +11,7 @@
 
 [node name="dragableobject" parent="tablet" groups=["pieces"] instance=ExtResource("1_27ut7")]
 z_index = 1
-position = Vector2(351, 447)
+position = Vector2(382, 360)
 
 [node name="Icon" type="Sprite2D" parent="tablet/dragableobject"]
 modulate = Color(0.756863, 0.592157, 0.321569, 1)
