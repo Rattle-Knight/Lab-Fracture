@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bejgajpcjfb21"]
+[gd_scene load_steps=6 format=3 uid="uid://bejgajpcjfb21"]
 
 [ext_resource type="Script" path="res://dragger_objects/dragableobject.gd" id="1_kum6o"]
+[ext_resource type="Material" uid="uid://bdffe4k2tbbi3" path="res://dragger_objects/dragger.tres" id="2_nt278"]
+[ext_resource type="Texture2D" uid="uid://cy7vhj5yg8wxr" path="res://dragger_objects/f0cb213e8d2a03b11b2b205105fd79fd_190c90361565d9779cfed41615cabf53.webp" id="3_a2mlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqbt"]
 size = Vector2(129, 128)
@@ -21,6 +23,14 @@ shape = SubResource("RectangleShape2D_cmqbt")
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_o8q3c")
 debug_color = Color(0.501961, 0.560784, 0.423529, 0.419608)
+
+[node name="area" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.0235294)
+z_index = -1
+material = ExtResource("2_nt278")
+position = Vector2(-0.500002, -1.32511e-06)
+scale = Vector2(0.477778, 0.336842)
+texture = ExtResource("3_a2mlu")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

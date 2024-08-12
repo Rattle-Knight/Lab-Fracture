@@ -9,6 +9,35 @@
 
 [node name="tablet" parent="." instance=ExtResource("1_x8opp")]
 
+[node name="dragableobject" parent="tablet" groups=["pieces"] instance=ExtResource("1_27ut7")]
+z_index = 1
+position = Vector2(351, 447)
+
+[node name="Icon" type="Sprite2D" parent="tablet/dragableobject"]
+modulate = Color(0.756863, 0.592157, 0.321569, 1)
+z_index = -1
+position = Vector2(0, 3)
+texture = ExtResource("3_0os1h")
+
+[node name="dragableobject2" parent="tablet" groups=["pieces"] instance=ExtResource("1_27ut7")]
+z_index = 1
+position = Vector2(662, 356)
+
+[node name="Icon" type="Sprite2D" parent="tablet/dragableobject2"]
+z_index = -1
+position = Vector2(0, 3)
+texture = ExtResource("3_0os1h")
+
+[node name="dragableobject3" parent="tablet" groups=["pieces"] instance=ExtResource("1_27ut7")]
+z_index = 1
+position = Vector2(163, 275)
+
+[node name="Icon" type="Sprite2D" parent="tablet/dragableobject3"]
+modulate = Color(1, 0, 1, 1)
+z_index = -1
+position = Vector2(-2, 2)
+texture = ExtResource("3_0os1h")
+
 [node name="labpiece" parent="." groups=["labs"] instance=ExtResource("2_8a3ck")]
 position = Vector2(408, 183)
 
@@ -33,30 +62,4 @@ position = Vector2(950, 262)
 modulate = Color(1, 0, 1, 1)
 z_index = -1
 position = Vector2(-2, -7)
-texture = ExtResource("3_0os1h")
-
-[node name="dragableobject" parent="." groups=["pieces"] instance=ExtResource("1_27ut7")]
-position = Vector2(351, 447)
-
-[node name="Icon" type="Sprite2D" parent="dragableobject"]
-modulate = Color(0.756863, 0.592157, 0.321569, 1)
-z_index = -1
-position = Vector2(-3, -2)
-texture = ExtResource("3_0os1h")
-
-[node name="dragableobject2" parent="." groups=["pieces"] instance=ExtResource("1_27ut7")]
-position = Vector2(662, 356)
-
-[node name="Icon" type="Sprite2D" parent="dragableobject2"]
-z_index = -1
-position = Vector2(-3, 5)
-texture = ExtResource("3_0os1h")
-
-[node name="dragableobject3" parent="." groups=["pieces"] instance=ExtResource("1_27ut7")]
-position = Vector2(163, 275)
-
-[node name="Icon" type="Sprite2D" parent="dragableobject3"]
-modulate = Color(1, 0, 1, 1)
-z_index = -1
-position = Vector2(2, 2)
 texture = ExtResource("3_0os1h")

@@ -3,6 +3,8 @@ extends CharacterBody2D
 var dragable = false
 var is_dragging = false
 
+@onready var area = $area
+
 
 var delay  = 10
 var dragging: bool = false
@@ -33,7 +35,9 @@ func _physics_process(delta):
 
 func _on_area_2d_mouse_entered():
 	dragable = true
+	area.material.set_shader_parameter("color",Color(0,1,1,1))
 
 
 func _on_area_2d_mouse_exited():
 	dragable = false
+	area.material.set_shader_parameter("color",Color(0,0,0,0))
