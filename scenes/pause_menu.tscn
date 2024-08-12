@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://oqx6igmbrk4n"]
+
+[ext_resource type="FontFile" uid="uid://co4seb7vxpbow" path="res://font/Vanilla.ttf" id="1_28kw1"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ei3hl"]
+[ext_resource type="PackedScene" uid="uid://0xc872strf25" path="res://scenes/settings.tscn" id="3_l4gn3"]
+
+[node name="pause menu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ei3hl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.345098)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -50.5
+offset_right = 77.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28kw1")
+theme_override_font_sizes/font_size = 20
+text = "Resume"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28kw1")
+text = "Settings"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28kw1")
+text = "Quit"
+
+[node name="settings" parent="." instance=ExtResource("3_l4gn3")]
+visible = true
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_quit_pressed"]
