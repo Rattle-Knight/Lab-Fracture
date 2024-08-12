@@ -58,5 +58,5 @@ func openapp():
 	await tween.finished
 	Global.openapp = true
 	
-func _on_tikto_pressed():
+func _on_pressed():
 	openapp()

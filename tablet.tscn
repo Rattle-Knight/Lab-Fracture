@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xajyua0o5f2t"]
+[gd_scene load_steps=22 format=3 uid="uid://xajyua0o5f2t"]
 
 [ext_resource type="Script" path="res://dragger_objects/ObjectPositionInisitilaiser.gd" id="1_0sn15"]
 [ext_resource type="Texture2D" uid="uid://bvsxeewepcho4" path="res://dragger_objects/tab2.png" id="2_bv35t"]
@@ -8,10 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://cy7vhj5yg8wxr" path="res://dragger_objects/f0cb213e8d2a03b11b2b205105fd79fd_190c90361565d9779cfed41615cabf53.webp" id="6_wt4s4"]
 [ext_resource type="Texture2D" uid="uid://buk18dbkokgxv" path="res://dragger_objects/tab_app_1.png" id="7_7bhqx"]
 [ext_resource type="Texture2D" uid="uid://dl3uc2sylyfuf" path="res://dragger_objects/tab_app_2.png" id="8_buxrc"]
+[ext_resource type="Texture2D" uid="uid://dedklf5fvan2k" path="res://dragger_objects/tab_app_1_click.png" id="8_iemhu"]
 [ext_resource type="Texture2D" uid="uid://bal6glf6ey0h6" path="res://dragger_objects/tab_app_3.png" id="9_8urfx"]
+[ext_resource type="Texture2D" uid="uid://b3no0bqn7nvjg" path="res://dragger_objects/tab_app_2_click.png" id="10_gbi4y"]
 [ext_resource type="Texture2D" uid="uid://dwpwulx3u0f5d" path="res://dragger_objects/tab_app_4.png" id="10_u4pp2"]
+[ext_resource type="Texture2D" uid="uid://pdpetdlvyrfk" path="res://dragger_objects/tab_app_5.png" id="11_df4xy"]
 [ext_resource type="Texture2D" uid="uid://thwkdvv8dqem" path="res://dragger_objects/menuopen.png" id="11_sw67u"]
 [ext_resource type="AudioStream" uid="uid://dnymoimgaflrq" path="res://dragger_objects/click.mp3" id="12_cty6k"]
+[ext_resource type="Texture2D" uid="uid://d3to4mxyahaiu" path="res://dragger_objects/tab_app_3_click.png" id="12_sak6y"]
+[ext_resource type="Texture2D" uid="uid://b87o8eyiq17ir" path="res://dragger_objects/tab_app_4_click.png" id="14_7tl83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64nma"]
 size = Vector2(1069, 27)
@@ -76,43 +81,56 @@ texture = ExtResource("6_wt4s4")
 
 [node name="Tikto" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 307.0
+offset_left = 257.0
 offset_top = 476.0
-offset_right = 422.0
+offset_right = 372.0
 offset_bottom = 592.0
 scale = Vector2(0.875, 0.875)
 texture_normal = ExtResource("7_7bhqx")
+texture_hover = ExtResource("8_iemhu")
 stretch_mode = 0
 
 [node name="mootube" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 451.0
-offset_top = 478.0
-offset_right = 566.0
-offset_bottom = 594.0
+offset_left = 391.0
+offset_top = 477.0
+offset_right = 506.0
+offset_bottom = 593.0
 scale = Vector2(0.875, 0.875)
 texture_normal = ExtResource("8_buxrc")
+texture_hover = ExtResource("10_gbi4y")
 
 [node name="twit" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 591.0
-offset_top = 478.0
-offset_right = 706.0
-offset_bottom = 594.0
+offset_left = 650.0
+offset_top = 477.0
+offset_right = 765.0
+offset_bottom = 593.0
 scale = Vector2(0.875, 0.875)
 texture_normal = ExtResource("9_8urfx")
+texture_hover = ExtResource("12_sak6y")
 
 [node name="metflux" type="TextureButton" parent="."]
 z_index = 1
-offset_left = 731.0
+offset_left = 781.0
 offset_top = 478.0
-offset_right = 846.0
+offset_right = 896.0
 offset_bottom = 594.0
 scale = Vector2(0.875, 0.875)
 texture_normal = ExtResource("10_u4pp2")
+texture_hover = ExtResource("14_7tl83")
+
+[node name="saver_of_worlds" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 522.0
+offset_top = 475.0
+offset_right = 637.0
+offset_bottom = 591.0
+scale = Vector2(0.875, 0.875)
+texture_normal = ExtResource("11_df4xy")
 
 [node name="Menuopen" type="Sprite2D" parent="."]
-position = Vector2(366, 530)
+position = Vector2(574, 520)
 scale = Vector2(0.053125, 0.0518518)
 texture = ExtResource("11_sw67u")
 
@@ -120,4 +138,5 @@ texture = ExtResource("11_sw67u")
 stream = ExtResource("12_cty6k")
 
 [connection signal="pressed" from="TextureButton" to="ObjectPositionInisitilaiser" method="_on_button_pressed"]
-[connection signal="pressed" from="Tikto" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]
+[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]
+[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_pressed"]
