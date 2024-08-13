@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://scenes/labpiece.tscn" id="1_nqv7j"]
 [ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/lab 01 B.png" id="2_xo3xi"]
+[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="1_nqv7j"]
+[ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/toplinep.png" id="2_xo3xi"]
 [ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="3_k1erf"]
 [ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="4_6tuqe"]
 

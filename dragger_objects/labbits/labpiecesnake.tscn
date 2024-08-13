@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://scenes/labpiece.tscn" id="1_m0ubd"]
 [ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/lab 01 A.png" id="2_txjpm"]
+[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="1_m0ubd"]
+[ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/snakep.png" id="2_txjpm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6drb"]
 size = Vector2(127.5, 43.5)

@@ -9,13 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://rpy27atq8g70" path="res://levels/tab 01 E.png" id="7_gjlkn"]
 [ext_resource type="Texture2D" uid="uid://bthjsjuo6f324" path="res://levels/tab 01 smiley.png" id="8_lvj3j"]
 [ext_resource type="Texture2D" uid="uid://7duqghptonpa" path="res://levels/tab 01 end.png" id="9_i34yj"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://labpiece.tscn" id="10_6gi5s"]
 [ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/lab 01 A.png" id="11_xl5v7"]
 [ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/lab 01 B.png" id="12_n62rv"]
+=======
+[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://scenes/labpiece.tscn" id="10_6gi5s"]
+[ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/snakep.png" id="11_xl5v7"]
+[ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/toplinep.png" id="12_n62rv"]
+>>>>>>> parent of 5ddc0bc (edits)
 [ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="12_nfula"]
-[ext_resource type="Texture2D" uid="uid://b1sqdl3y8newd" path="res://levels/labp/lab 01 C.png" id="13_6yywx"]
-[ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/lab 01 D.png" id="14_bc8xk"]
-[ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lab 01 E.png" id="15_emfbu"]
+[ext_resource type="Texture2D" uid="uid://b1sqdl3y8newd" path="res://levels/labp/sp.png" id="13_6yywx"]
+[ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/topdp.png" id="14_bc8xk"]
+[ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lp.png" id="15_emfbu"]
 [ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="16_gf7l8"]
 [ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
 [ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="19_tgg4n"]
