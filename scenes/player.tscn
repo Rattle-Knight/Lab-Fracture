@@ -1,8 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://c1he760tjlv4h"]
+[gd_scene load_steps=45 format=3 uid="uid://c1he760tjlv4h"]
 
 [ext_resource type="Texture2D" uid="uid://in36lbblph3t" path="res://sprites/mystic_woods_free_2.2/sprites/player.png" id="1_02gxb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ep2gg"]
 [ext_resource type="AudioStream" uid="uid://ccn8khtccl8c1" path="res://sprites/audio/SFX/stone-steps-6748.mp3" id="3_g1s5p"]
+[ext_resource type="AudioStream" uid="uid://cx60ye873gpvj" path="res://csfx/e-oh-91679.mp3" id="4_i2iou"]
+[ext_resource type="AudioStream" uid="uid://bohkcv4qjq0wl" path="res://csfx/transitional-swipe-211688.mp3" id="5_hfdmu"]
+[ext_resource type="Texture2D" uid="uid://cich5b2gbbsvm" path="res://sprites/scientis/holloy_DEAD.png" id="6_sngoe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22fd4"]
 atlas = ExtResource("1_02gxb")
@@ -298,7 +301,8 @@ collision_layer = 5
 script = ExtResource("1_ep2gg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -19)
+scale = Vector2(1.375, 1.375)
 sprite_frames = SubResource("SpriteFrames_2be72")
 animation = &"walk right"
 
@@ -309,3 +313,16 @@ shape = SubResource("CircleShape2D_aalsw")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_g1s5p")
 bus = &"SFX"
+
+[node name="uhoh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i2iou")
+bus = &"SFX"
+
+[node name="splat" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_hfdmu")
+bus = &"SFX"
+
+[node name="dead" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_sngoe")

@@ -5,6 +5,9 @@ var player_state
 
 @onready var walking_audio = $AudioStreamPlayer2D
 
+func _ready():
+	$dead.visible = false
+
 func _physics_process(delta):
 	if not Global.playerdead:
 		var direction = Input.get_vector("left", "right", "up", "down")
@@ -18,15 +21,19 @@ func _physics_process(delta):
 		move_and_slide()
 	
 		play_anim(direction)
+	else:
+		$AnimatedSprite2D.visible = false
+		$dead.visible = true
 
 func play_anim(dir):
-	if player_state == "idle":
-		$AnimatedSprite2D.play("idle")
-		walking_audio.stop()
-	if player_state == "walking":
-		$AnimatedSprite2D.stop()
-		if !walking_audio.playing:
-			walking_audio.play()
+	if not Global.playerdead:
+		if player_state == "idle":
+			$AnimatedSprite2D.play("idle")
+			walking_audio.stop()
+		if player_state == "walking":
+			$AnimatedSprite2D.stop()
+			if !walking_audio.playing:
+				walking_audio.play()
 		
 		#if dir.y == -1:
 			#$AnimatedSprite2D.play("walk up")
