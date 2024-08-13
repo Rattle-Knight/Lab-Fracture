@@ -138,5 +138,5 @@ texture = ExtResource("11_sw67u")
 stream = ExtResource("12_cty6k")
 
 [connection signal="pressed" from="TextureButton" to="ObjectPositionInisitilaiser" method="_on_button_pressed"]
-[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]
 [connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_pressed"]
+[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]
