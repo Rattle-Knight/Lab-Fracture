@@ -1,17 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtsikpwoy8cvy"]
+[gd_scene load_steps=5 format=3 uid="uid://dtsikpwoy8cvy"]
 
 [ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="1_litmb"]
 [ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/topdp.png" id="2_qt2oh"]
-[ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="3_0tte8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg5lp"]
 size = Vector2(90, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6t1l"]
 size = Vector2(128, 45)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tae3l"]
-size = Vector2(138, 137)
 
 [node name="labpiece" instance=ExtResource("1_litmb")]
 
@@ -30,9 +26,3 @@ shape = SubResource("RectangleShape2D_dg5lp")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 position = Vector2(0, 40.5)
 shape = SubResource("RectangleShape2D_c6t1l")
-
-[node name="safearea" type="Area2D" parent="." index="2"]
-script = ExtResource("3_0tte8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="safearea" index="0"]
-shape = SubResource("RectangleShape2D_tae3l")

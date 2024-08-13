@@ -64,3 +64,12 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	dragable = false
 	area.material.set_shader_parameter("color",Color(0,0,0,0))
+
+
+func _on_safearea_entered():
+	immobile = true
+
+
+
+func _on_safearea_exit():
+	immobile = false

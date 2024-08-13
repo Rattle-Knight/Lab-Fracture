@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bgygj2w23sfxx"]
+[gd_scene load_steps=33 format=3 uid="uid://bgygj2w23sfxx"]
 
 [ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://tablet.tscn" id="1_dvwkj"]
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="2_ajjrt"]
@@ -19,6 +19,7 @@
 [ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="16_gf7l8"]
 [ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
 [ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="19_tgg4n"]
+[ext_resource type="PackedScene" uid="uid://vtgbi63pn50x" path="res://dragger_objects/draggerobjectstart.tscn" id="20_frwf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8cr"]
 size = Vector2(127.5, 43.5)
@@ -115,11 +116,11 @@ position = Vector2(0, 0.999985)
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("9_i34yj")
 
-[node name="start2" parent="tablet" instance=ExtResource("2_ajjrt")]
-position = Vector2(77, 300)
+[node name="start" parent="tablet" instance=ExtResource("20_frwf8")]
+position = Vector2(78, 297)
 
-[node name="start" type="Sprite2D" parent="tablet/start2"]
-position = Vector2(-27, 4)
+[node name="start" type="Sprite2D" parent="tablet/start"]
+position = Vector2(-28, 7)
 texture = ExtResource("8_lvj3j")
 
 [node name="lab" type="Node2D" parent="."]
@@ -300,6 +301,18 @@ position = Vector2(695, 350)
 texture = ExtResource("16_kiy6c")
 
 [node name="player" parent="." instance=ExtResource("19_tgg4n")]
+z_index = -1
 position = Vector2(99, 313)
 collision_layer = 32
 collision_mask = 32
+
+[connection signal="entered" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l2/safearea" to="tablet/t2" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l2/safearea" to="tablet/t2" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l3/safearea" to="tablet/t3" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l3/safearea" to="tablet/t3" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l5/safearea" to="tablet/t5" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l5/safearea" to="tablet/t5" method="_on_safearea_exit"]

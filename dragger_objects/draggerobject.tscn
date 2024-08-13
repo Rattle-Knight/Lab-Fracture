@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cy7vhj5yg8wxr" path="res://dragger_objects/f0cb213e8d2a03b11b2b205105fd79fd_190c90361565d9779cfed41615cabf53.webp" id="3_a2mlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqbt"]
-size = Vector2(129, 128)
+size = Vector2(131, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8q3c"]
-size = Vector2(129, 127)
+size = Vector2(130, 127)
 
 [node name="dragableobject" type="CharacterBody2D"]
 script = ExtResource("1_kum6o")
@@ -16,17 +16,16 @@ script = ExtResource("1_kum6o")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 1)
+position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_cmqbt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_o8q3c")
 debug_color = Color(0.501961, 0.560784, 0.423529, 0.419608)
 
 [node name="area" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.0235294)
-z_index = -1
 material = ExtResource("2_nt278")
 position = Vector2(-0.500002, -1.32511e-06)
 scale = Vector2(0.477778, 0.336842)

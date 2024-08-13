@@ -1,17 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://otx8yuj4w6nq"]
+[gd_scene load_steps=5 format=3 uid="uid://otx8yuj4w6nq"]
 
 [ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="1_m0ubd"]
 [ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/snakep.png" id="2_txjpm"]
-[ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="3_rvbxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6drb"]
 size = Vector2(127.5, 43.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ja14o"]
 size = Vector2(40.731, 38.7243)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xajby"]
-size = Vector2(138, 137)
 
 [node name="labpiece" instance=ExtResource("1_m0ubd")]
 
@@ -36,9 +32,3 @@ shape = SubResource("RectangleShape2D_ja14o")
 position = Vector2(-42, 41)
 rotation = -1.57797
 shape = SubResource("RectangleShape2D_ja14o")
-
-[node name="safearea" type="Area2D" parent="." index="2"]
-script = ExtResource("3_rvbxl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="safearea" index="0"]
-shape = SubResource("RectangleShape2D_xajby")

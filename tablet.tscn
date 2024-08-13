@@ -53,6 +53,8 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="bounds" type="StaticBody2D" parent="."]
+collision_layer = 33
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
 position = Vector2(589.5, 54)
@@ -73,7 +75,6 @@ rotation = 1.56781
 shape = SubResource("RectangleShape2D_i10g4")
 
 [node name="crt" type="Sprite2D" parent="."]
-visible = false
 z_index = 2
 material = SubResource("ShaderMaterial_5htf7")
 position = Vector2(576, 318)

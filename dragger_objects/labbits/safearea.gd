@@ -4,17 +4,19 @@ extends Area2D
 var safe_area_count = 0
 
 signal player_died
+signal entered
+signal exit
 
 func _ready():
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
 
-func _process(delta):
-	print("count" , Global.safe_area_count)
+
 
 func _on_body_entered(body):
 	if body == player:
 		Global.safe_area_count += 1
+		emit_signal("entered")
 
 func _on_body_exited(body):
 	if body == player:
@@ -22,3 +24,4 @@ func _on_body_exited(body):
 		if Global.safe_area_count == 0:
 			emit_signal("player_died")
 			player.queue_free()  # Kill the player
+		emit_signal("exit")
