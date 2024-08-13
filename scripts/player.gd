@@ -9,21 +9,24 @@ func _ready():
 	$dead.visible = false
 
 func _physics_process(delta):
-	if not Global.playerdead:
-		var direction = Input.get_vector("left", "right", "up", "down")
+	var direction = Input.get_vector("left", "right", "up", "down")
 	
-		if direction.x == 0 and direction.y == 0:
-			player_state = "idle"
-		elif direction.x != 0 or direction.y != 0:
-			player_state = "walking"
+	if direction.x == 0 and direction.y == 0:
+		player_state = "idle"
+	elif direction.x != 0 or direction.y != 0:
+		player_state = "walking"
 	
-		velocity = direction * speed
-		move_and_slide()
+	velocity = direction * speed
+	move_and_slide()
 	
+<<<<<<< HEAD
 		play_anim(direction)
 	else:
 		$AnimatedSprite2D.visible = false
 		$dead.visible = true
+=======
+	play_anim(direction)
+>>>>>>> parent of 1a963d2 (aded more death)
 
 func play_anim(dir):
 	if not Global.playerdead:
