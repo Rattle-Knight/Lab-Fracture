@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6so4ec7ugyf5"
-path="res://.godot/imported/snakep.png-717a504917b952934a1ce5d53e1a69ef.ctex"
+uid="uid://ctb0bwpk6ii43"
+path="res://.godot/imported/lab 01 J.png-fe2c109f714b131fb58a24c1ee084b88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/labp/snakep.png"
-dest_files=["res://.godot/imported/snakep.png-717a504917b952934a1ce5d53e1a69ef.ctex"]
+source_file="res://levels/labp/lab 01 J.png"
+dest_files=["res://.godot/imported/lab 01 J.png-fe2c109f714b131fb58a24c1ee084b88.ctex"]
 
 [params]
 

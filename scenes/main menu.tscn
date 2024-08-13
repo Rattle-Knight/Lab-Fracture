@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnlhrp40xv0o7"]
 
 [ext_resource type="Script" path="res://scripts/main menu.gd" id="1_w8jla"]
-[ext_resource type="Texture2D" uid="uid://dc2w0dmpftfc4" path="res://img/menu dark.png" id="2_i2f1c"]
+[ext_resource type="Texture2D" uid="uid://dc2w0dmpftfc4" path="res://sprites/menu dark.png" id="2_i2f1c"]
 [ext_resource type="Theme" uid="uid://br1s1i6pbvjgp" path="res://resources/menu Button.tres" id="3_a6amd"]
 [ext_resource type="AudioStream" uid="uid://j8oq11x0iyjw" path="res://sprites/audio/mad scientist.mp3" id="4_kfqmt"]
 
