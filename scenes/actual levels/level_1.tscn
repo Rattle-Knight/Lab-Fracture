@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgygj2w23sfxx"]
+[gd_scene load_steps=32 format=3 uid="uid://bgygj2w23sfxx"]
 
 [ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://tablet.tscn" id="1_dvwkj"]
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="2_ajjrt"]
@@ -12,10 +12,54 @@
 [ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="10_6gi5s"]
 [ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/snakep.png" id="11_xl5v7"]
 [ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/toplinep.png" id="12_n62rv"]
+[ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="12_nfula"]
 [ext_resource type="Texture2D" uid="uid://b1sqdl3y8newd" path="res://levels/labp/sp.png" id="13_6yywx"]
 [ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/topdp.png" id="14_bc8xk"]
 [ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lp.png" id="15_emfbu"]
+[ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="16_gf7l8"]
 [ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
+[ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="19_tgg4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8cr"]
+size = Vector2(127.5, 43.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dulur"]
+size = Vector2(40.731, 38.7243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y63em"]
+size = Vector2(138, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woo50"]
+size = Vector2(128, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o2s4"]
+size = Vector2(40, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyjfc"]
+size = Vector2(90, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kj1r"]
+size = Vector2(128, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vcvu"]
+size = Vector2(89, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmdx4"]
+size = Vector2(67, 59)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_11mt2"]
+frequency = 0.0036
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e7tgf"]
+seamless = true
+seamless_blend_skirt = 0.393
+noise = SubResource("FastNoiseLite_11mt2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52adg"]
+shader = ExtResource("16_gf7l8")
+shader_parameter/scroll = Vector2(0.05, 0.05)
+shader_parameter/distortion_strength = 0.315
+shader_parameter/noise = SubResource("NoiseTexture2D_e7tgf")
 
 [node name="Level 1" type="Node2D"]
 
@@ -88,12 +132,49 @@ position = Vector2(164, 155)
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("11_xl5v7")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l1"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l1/StaticBody2D"]
+position = Vector2(0.25, -41.75)
+shape = SubResource("RectangleShape2D_fq8cr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l1/StaticBody2D"]
+position = Vector2(43, -3.8147e-06)
+rotation = -1.57797
+shape = SubResource("RectangleShape2D_dulur")
+
+[node name="safearea" type="Area2D" parent="lab/l1"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l1/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
 [node name="l2" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
 position = Vector2(407, 166)
 
 [node name="line" type="Sprite2D" parent="lab/l2"]
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("12_n62rv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l2"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l2/StaticBody2D"]
+position = Vector2(0, 21.5)
+shape = SubResource("RectangleShape2D_woo50")
+
+[node name="safearea" type="Area2D" parent="lab/l2"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l2/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
 
 [node name="l3" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
 position = Vector2(590, 162)
@@ -102,12 +183,52 @@ position = Vector2(590, 162)
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("13_6yywx")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l3"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l3/StaticBody2D"]
+position = Vector2(-43, -21)
+shape = SubResource("RectangleShape2D_0o2s4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l3/StaticBody2D"]
+position = Vector2(43, 24)
+shape = SubResource("RectangleShape2D_0o2s4")
+
+[node name="safearea" type="Area2D" parent="lab/l3"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l3/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
 [node name="l4" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
 position = Vector2(285, 383)
 
 [node name="topd" type="Sprite2D" parent="lab/l4"]
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("14_bc8xk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l4"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l4/StaticBody2D"]
+position = Vector2(-19, -4)
+shape = SubResource("RectangleShape2D_hyjfc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l4/StaticBody2D"]
+position = Vector2(0, 40.5)
+shape = SubResource("RectangleShape2D_8kj1r")
+
+[node name="safearea" type="Area2D" parent="lab/l4"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l4/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
 
 [node name="l5" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
 position = Vector2(511, 384)
@@ -116,12 +237,37 @@ position = Vector2(511, 384)
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("15_emfbu")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l5"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l5/StaticBody2D"]
+position = Vector2(19.5, -18.5)
+shape = SubResource("RectangleShape2D_1vcvu")
+
+[node name="safearea" type="Area2D" parent="lab/l5"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l5/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
 [node name="start" parent="lab" instance=ExtResource("10_6gi5s")]
 position = Vector2(75, 305)
 
 [node name="start" type="Sprite2D" parent="lab/start"]
 position = Vector2(-27, 4)
 texture = ExtResource("8_lvj3j")
+
+[node name="safearea" type="Area2D" parent="lab/start"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/start/safearea"]
+position = Vector2(32.5, 5.5)
+shape = SubResource("RectangleShape2D_vmdx4")
 
 [node name="end" parent="lab" instance=ExtResource("10_6gi5s")]
 position = Vector2(863, 317)
@@ -131,7 +277,29 @@ position = Vector2(0, 0.999985)
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("9_i34yj")
 
-[node name="Bbg" type="Sprite2D" parent="."]
+[node name="safearea" type="Area2D" parent="lab/end"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("12_nfula")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/end/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="Bbgshad" type="Sprite2D" parent="CanvasLayer"]
 z_index = -20
+material = SubResource("ShaderMaterial_52adg")
 position = Vector2(658, 313)
 texture = ExtResource("16_kiy6c")
+
+[node name="Bbg2" type="Sprite2D" parent="CanvasLayer"]
+z_index = -21
+position = Vector2(695, 350)
+texture = ExtResource("16_kiy6c")
+
+[node name="player" parent="." instance=ExtResource("19_tgg4n")]
+position = Vector2(99, 313)
+collision_layer = 32
+collision_mask = 32
