@@ -6,7 +6,6 @@
 
 [node name="pause menu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.345098)
+color = Color(0.136826, 0.136826, 0.136826, 0.345098)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -61,6 +60,8 @@ text = "Quit"
 [node name="settings" parent="." instance=ExtResource("3_l4gn3")]
 visible = true
 layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_settings_pressed"]

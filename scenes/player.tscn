@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://c1he760tjlv4h"]
+[gd_scene load_steps=42 format=3 uid="uid://c1he760tjlv4h"]
 
 [ext_resource type="Texture2D" uid="uid://in36lbblph3t" path="res://sprites/mystic_woods_free_2.2/sprites/player.png" id="1_02gxb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ep2gg"]
+[ext_resource type="AudioStream" uid="uid://ccn8khtccl8c1" path="res://sprites/audio/SFX/stone-steps-6748.mp3" id="3_g1s5p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22fd4"]
 atlas = ExtResource("1_02gxb")
@@ -304,3 +305,7 @@ animation = &"walk right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_aalsw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g1s5p")
+bus = &"SFX"

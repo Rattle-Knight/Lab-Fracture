@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 var speed = 100
-
 var player_state
+
+@onready var walking_audio = $AudioStreamPlayer2D
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -20,8 +21,12 @@ func _physics_process(delta):
 func play_anim(dir):
 	if player_state == "idle":
 		$AnimatedSprite2D.play("idle")
+		walking_audio.stop()
 	if player_state == "walking":
 		$AnimatedSprite2D.stop()
+		if !walking_audio.playing:
+			walking_audio.play()
+		
 		#if dir.y == -1:
 			#$AnimatedSprite2D.play("walk up")
 		#if dir.x == 1:

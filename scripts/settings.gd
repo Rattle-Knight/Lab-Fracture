@@ -1,6 +1,10 @@
 extends Control
 
-
+func toggle_settings():
+	if self.visible == false:
+		self.visible = true
+	elif self.visible == true:
+		self.visible = false
 
 
 func _on_volume_value_changed(value):
@@ -17,4 +21,5 @@ func _on_option_button_item_selected(index):
 			DisplayServer.window_set_size(Vector2i(1600, 900))
 		2:
 			DisplayServer.window_set_size(Vector2i(1280, 720))
+
 

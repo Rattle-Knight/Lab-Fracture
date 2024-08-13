@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnlhrp40xv0o7"]
+[gd_scene load_steps=5 format=3 uid="uid://cnlhrp40xv0o7"]
 
 [ext_resource type="Script" path="res://scripts/main menu.gd" id="1_gxql1"]
 [ext_resource type="Texture2D" uid="uid://dc2w0dmpftfc4" path="res://img/menu dark.png" id="1_q3ujo"]
 [ext_resource type="Theme" uid="uid://br1s1i6pbvjgp" path="res://img/menu Button.tres" id="2_3bhev"]
+[ext_resource type="AudioStream" uid="uid://j8oq11x0iyjw" path="res://sprites/audio/mad scientist.mp3" id="4_6ql68"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -43,6 +44,10 @@ layout_mode = 2
 theme = ExtResource("2_3bhev")
 text = "Quit "
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6ql68")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr7avatdqw407"
+path="res://.godot/imported/Evil1 - Ancient Evil Awakens.ogg-bd6b152c9e7165ae8389d52f824a80b5.oggvorbisstr"
+
+[deps]
+
+source_file="res://sprites/audio/Evil1 - Ancient Evil Awakens.ogg"
+dest_files=["res://.godot/imported/Evil1 - Ancient Evil Awakens.ogg-bd6b152c9e7165ae8389d52f824a80b5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
