@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bgygj2w23sfxx"]
+[gd_scene load_steps=35 format=3 uid="uid://bgygj2w23sfxx"]
 
 [ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://tablet.tscn" id="1_dvwkj"]
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="2_ajjrt"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
 [ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="19_tgg4n"]
 [ext_resource type="PackedScene" uid="uid://vtgbi63pn50x" path="res://dragger_objects/draggerobjectstart.tscn" id="20_frwf8"]
+[ext_resource type="AudioStream" uid="uid://cx60ye873gpvj" path="res://csfx/e-oh-91679.mp3" id="21_i3sxb"]
+[ext_resource type="AudioStream" uid="uid://bohkcv4qjq0wl" path="res://csfx/transitional-swipe-211688.mp3" id="22_l0c0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8cr"]
 size = Vector2(127.5, 43.5)
@@ -305,6 +307,14 @@ z_index = -1
 position = Vector2(99, 313)
 collision_layer = 32
 collision_mask = 32
+
+[node name="uhoh" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("21_i3sxb")
+bus = &"SFX"
+
+[node name="splat" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("22_l0c0m")
+bus = &"SFX"
 
 [connection signal="entered" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_entered"]
 [connection signal="exit" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_exit"]
