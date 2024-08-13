@@ -49,22 +49,5 @@ text = "Music"
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_gpeme")
-theme_override_font_sizes/font_size = 30
-text = "Resolution"
-
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-item_count = 3
-popup/item_0/text = "1920 x 1080"
-popup/item_0/id = 0
-popup/item_1/text = "1600 x 1900"
-popup/item_1/id = 1
-popup/item_2/text = "1280 x 720"
-popup/item_2/id = 2
-
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

@@ -60,7 +60,14 @@ text = "Quit"
 
 [node name="settings" parent="." instance=ExtResource("3_l4gn3")]
 visible = true
-layout_mode = 1
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1058.0
+offset_top = 384.0
+offset_right = 1164.0
+offset_bottom = 384.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
