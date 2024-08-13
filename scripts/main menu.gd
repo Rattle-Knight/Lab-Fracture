@@ -1,7 +1,7 @@
 extends Control
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/outside.tscn")
+	get_tree().change_scene_to_file("res://scenes/actual levels/level_1.tscn")
 	var can_esc = false
 
 

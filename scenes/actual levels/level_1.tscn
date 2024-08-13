@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgygj2w23sfxx"]
+[gd_scene load_steps=17 format=3 uid="uid://bgygj2w23sfxx"]
 
 [ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://tablet.tscn" id="1_dvwkj"]
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="2_ajjrt"]
@@ -9,6 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://rpy27atq8g70" path="res://levels/tab 01 E.png" id="7_gjlkn"]
 [ext_resource type="Texture2D" uid="uid://bthjsjuo6f324" path="res://levels/tab 01 smiley.png" id="8_lvj3j"]
 [ext_resource type="Texture2D" uid="uid://7duqghptonpa" path="res://levels/tab 01 end.png" id="9_i34yj"]
+[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="10_6gi5s"]
+[ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/snakep.png" id="11_xl5v7"]
+[ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/toplinep.png" id="12_n62rv"]
+[ext_resource type="Texture2D" uid="uid://b1sqdl3y8newd" path="res://levels/labp/sp.png" id="13_6yywx"]
+[ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/topdp.png" id="14_bc8xk"]
+[ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lp.png" id="15_emfbu"]
+[ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -70,3 +77,61 @@ position = Vector2(77, 300)
 [node name="start" type="Sprite2D" parent="tablet/start2"]
 position = Vector2(-27, 4)
 texture = ExtResource("8_lvj3j")
+
+[node name="lab" type="Node2D" parent="."]
+z_index = -1
+
+[node name="l1" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
+position = Vector2(164, 155)
+
+[node name="Snakep" type="Sprite2D" parent="lab/l1"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("11_xl5v7")
+
+[node name="l2" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
+position = Vector2(407, 166)
+
+[node name="line" type="Sprite2D" parent="lab/l2"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("12_n62rv")
+
+[node name="l3" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
+position = Vector2(590, 162)
+
+[node name="sp" type="Sprite2D" parent="lab/l3"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("13_6yywx")
+
+[node name="l4" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
+position = Vector2(285, 383)
+
+[node name="topd" type="Sprite2D" parent="lab/l4"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("14_bc8xk")
+
+[node name="l5" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
+position = Vector2(511, 384)
+
+[node name="lp" type="Sprite2D" parent="lab/l5"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("15_emfbu")
+
+[node name="start" parent="lab" instance=ExtResource("10_6gi5s")]
+position = Vector2(75, 305)
+
+[node name="start" type="Sprite2D" parent="lab/start"]
+position = Vector2(-27, 4)
+texture = ExtResource("8_lvj3j")
+
+[node name="end" parent="lab" instance=ExtResource("10_6gi5s")]
+position = Vector2(863, 317)
+
+[node name="Tab01A" type="Sprite2D" parent="lab/end"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("9_i34yj")
+
+[node name="Bbg" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(658, 313)
+texture = ExtResource("16_kiy6c")
