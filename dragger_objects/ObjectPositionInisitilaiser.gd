@@ -10,7 +10,7 @@ var update_pos = false
 @onready var parent = get_parent()
 
 func _process(delta):
-	if update_pos and not downmode:
+	if update_pos and not Global.downmode:
 		#updates and moves down
 		
 		#fill
@@ -26,13 +26,13 @@ func _process(delta):
 		tween.tween_property(parent,"position",Vector2(0,500),0.5)
 		update_pos = false
 		warp()
-		downmode = true
+		Global.downmode = true
 		
-	elif update_pos and downmode:
+	elif update_pos and Global.downmode:
 		#moves it back up
 		var tween = create_tween()
 		tween.tween_property(parent,"position",Vector2(0,0),0.5)
-		downmode = false
+		Global.downmode = false
 		update_pos = false
 		
 		
@@ -40,11 +40,14 @@ func _process(delta):
 func warp():
 	if labs:
 		for indx in range(len(labs)):
-			var tween = create_tween()
-			tween.tween_property(labs[indx], "position", tabletpieces[indx].position, 1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
-			tween = create_tween()
-			tween.tween_property(labs[indx], "rotation", tabletpieces[indx].rotation, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
-			await tween.finished
+			if labs[indx].position != tabletpieces[indx].position or labs[indx].rotation != tabletpieces[indx].rotation:
+				$"../whoosh".play_with_random_pitch()
+				var tween = create_tween()
+				tween.tween_property(labs[indx], "position", tabletpieces[indx].position, 1).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+				tween = create_tween()
+				tween.tween_property(labs[indx], "rotation", tabletpieces[indx].rotation, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+				await tween.finished
+				$"../whoosh".stop()
 
 func _on_button_pressed():
 	update_pos = true

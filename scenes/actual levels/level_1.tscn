@@ -1,6 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://bgygj2w23sfxx"]
+[gd_scene load_steps=36 format=3 uid="uid://bgygj2w23sfxx"]
 
-[ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://scenes/tablet.tscn" id="1_dvwkj"]
+[ext_resource type="PackedScene" uid="uid://8hhj3bbse4wu" path="res://scenes/tablet.tscn" id="1_dvwkj"]
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="2_ajjrt"]
 [ext_resource type="Texture2D" uid="uid://cgyueb56kqvq8" path="res://levels/tab 01 A.png" id="3_7rjl3"]
 [ext_resource type="Texture2D" uid="uid://tb7fr135wl6p" path="res://levels/tab 01 B.png" id="4_f44ne"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://rpy27atq8g70" path="res://levels/tab 01 E.png" id="7_gjlkn"]
 [ext_resource type="Texture2D" uid="uid://bthjsjuo6f324" path="res://levels/tab 01 smiley.png" id="8_lvj3j"]
 [ext_resource type="Texture2D" uid="uid://7duqghptonpa" path="res://levels/tab 01 end.png" id="9_i34yj"]
-[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://scenes/labpiece.tscn" id="10_6gi5s"]
+[ext_resource type="PackedScene" path="res://scenes/labpiece.tscn" id="10_6gi5s"]
 [ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/lab 01 A.png" id="11_xl5v7"]
 [ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/lab 01 B.png" id="12_n62rv"]
 [ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="12_nfula"]
@@ -19,9 +19,10 @@
 [ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="16_gf7l8"]
 [ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
 [ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="19_tgg4n"]
-[ext_resource type="PackedScene" path="res://dragger_objects/draggerobjectstart.tscn" id="20_frwf8"]
+[ext_resource type="PackedScene" uid="uid://vtgbi63pn50x" path="res://dragger_objects/draggerobjectstart.tscn" id="20_frwf8"]
 [ext_resource type="AudioStream" uid="uid://cx60ye873gpvj" path="res://csfx/e-oh-91679.mp3" id="21_i3sxb"]
 [ext_resource type="AudioStream" uid="uid://bohkcv4qjq0wl" path="res://csfx/transitional-swipe-211688.mp3" id="22_l0c0m"]
+[ext_resource type="AudioStream" uid="uid://dqqtptvulv0lp" path="res://sprites/audio/SFX/Envision.mp3" id="23_pkhgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8cr"]
 size = Vector2(127.5, 43.5)
@@ -30,7 +31,7 @@ size = Vector2(127.5, 43.5)
 size = Vector2(40.731, 38.7243)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y63em"]
-size = Vector2(138, 137)
+size = Vector2(128, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_woo50"]
 size = Vector2(128, 85)
@@ -148,12 +149,18 @@ position = Vector2(43, -3.8147e-06)
 rotation = -1.57797
 shape = SubResource("RectangleShape2D_dulur")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="lab/l1/StaticBody2D"]
+position = Vector2(-43, 42)
+rotation = -1.57797
+shape = SubResource("RectangleShape2D_dulur")
+
 [node name="safearea" type="Area2D" parent="lab/l1"]
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("12_nfula")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l1/safearea"]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_y63em")
 
 [node name="l2" parent="lab" groups=["labs"] instance=ExtResource("10_6gi5s")]
@@ -315,6 +322,10 @@ bus = &"SFX"
 [node name="splat" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("22_l0c0m")
 bus = &"SFX"
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_pkhgb")
+autoplay = true
 
 [connection signal="entered" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_entered"]
 [connection signal="exit" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_exit"]
