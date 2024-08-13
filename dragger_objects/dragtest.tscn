@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cel0v0k5v7go4"]
 
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="1_27ut7"]
-[ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://tablet.tscn" id="1_x8opp"]
-[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://labpiece.tscn" id="2_8a3ck"]
+[ext_resource type="PackedScene" uid="uid://xajyua0o5f2t" path="res://scenes/tablet.tscn" id="1_x8opp"]
+[ext_resource type="PackedScene" uid="uid://dnu3vmarahfny" path="res://scenes/labpiece.tscn" id="2_8a3ck"]
 [ext_resource type="Texture2D" uid="uid://dmtegotymset4" path="res://icon.svg" id="3_0os1h"]
 
 [node name="dragtest" type="Node2D"]
