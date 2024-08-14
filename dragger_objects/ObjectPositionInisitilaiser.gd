@@ -23,7 +23,7 @@ func _process(delta):
 		
 		#updating
 		var tween = create_tween()
-		tween.tween_property(parent,"position",Vector2(0,500),0.5)
+		tween.tween_property(parent,"position",parent.position + Vector2(0,500),0.5)
 		update_pos = false
 		warp()
 		Global.downmode = true

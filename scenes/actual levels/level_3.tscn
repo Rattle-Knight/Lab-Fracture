@@ -90,7 +90,7 @@ texture = ExtResource("4_ywxli")
 
 [node name="t2" parent="tablet" groups=["pieces"] instance=ExtResource("3_squ1q")]
 position = Vector2(533, 277)
-immobile = true
+trueimmobile = true
 
 [node name="Tab01A" type="Sprite2D" parent="tablet/t2"]
 position = Vector2(0, 0.999985)
@@ -99,7 +99,7 @@ texture = ExtResource("5_on46m")
 
 [node name="t2_2" parent="tablet" groups=["pieces"] instance=ExtResource("3_squ1q")]
 position = Vector2(534.68, 145)
-immobile = true
+trueimmobile = true
 
 [node name="Tab01A" type="Sprite2D" parent="tablet/t2_2"]
 position = Vector2(0, 0.999985)
@@ -108,7 +108,7 @@ texture = ExtResource("5_on46m")
 
 [node name="t2_3" parent="tablet" groups=["pieces"] instance=ExtResource("3_squ1q")]
 position = Vector2(534, 406)
-immobile = true
+trueimmobile = true
 
 [node name="Tab01A" type="Sprite2D" parent="tablet/t2_3"]
 position = Vector2(0, 0.999985)
@@ -141,7 +141,7 @@ texture = ExtResource("8_wv3ss")
 
 [node name="end" parent="tablet" instance=ExtResource("3_squ1q")]
 position = Vector2(866, 312)
-immobile = true
+trueimmobile = true
 
 [node name="Tab01A" type="Sprite2D" parent="tablet/end"]
 position = Vector2(0, 0.999985)

@@ -108,9 +108,17 @@ position = Vector2(0, 0.999985)
 scale = Vector2(0.715, 0.715)
 texture = ExtResource("7_odrin")
 
+[node name="t5" parent="tablet" groups=["pieces"] instance=ExtResource("3_r1n4k")]
+position = Vector2(591, 326)
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/t5"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("7_odrin")
+
 [node name="end" parent="tablet" instance=ExtResource("3_r1n4k")]
 position = Vector2(1003, 269)
-immobile = true
+trueimmobile = true
 
 [node name="Tab01A" type="Sprite2D" parent="tablet/end"]
 position = Vector2(0, 0.999985)
@@ -242,6 +250,33 @@ script = ExtResource("14_6113e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l4/safearea"]
 shape = SubResource("RectangleShape2D_y63em")
 
+[node name="l5" parent="lab" groups=["labs"] instance=ExtResource("12_q6ocx")]
+position = Vector2(608, 338)
+
+[node name="topd" type="Sprite2D" parent="lab/l5"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("17_0nisu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l5"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l5/StaticBody2D"]
+position = Vector2(-19, -4)
+shape = SubResource("RectangleShape2D_hyjfc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l5/StaticBody2D"]
+position = Vector2(0, 40.5)
+shape = SubResource("RectangleShape2D_8kj1r")
+
+[node name="safearea" type="Area2D" parent="lab/l5"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_6113e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l5/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
 [node name="start" parent="lab" instance=ExtResource("12_q6ocx")]
 position = Vector2(75, 305)
 
@@ -341,4 +376,6 @@ connected_scene = "level_2"
 [connection signal="exit" from="lab/l3/safearea" to="tablet/t3" method="_on_safearea_exit"]
 [connection signal="entered" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_entered"]
 [connection signal="exit" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l5/safearea" to="tablet/t4" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l5/safearea" to="tablet/t4" method="_on_safearea_exit"]
 [connection signal="body_entered" from="lab/end/sceneChange" to="lab/end" method="_on_scene_change_body_entered"]
