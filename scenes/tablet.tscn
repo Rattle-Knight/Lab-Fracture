@@ -55,8 +55,6 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="bounds" type="StaticBody2D" parent="."]
-collision_layer = 33
-collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
 position = Vector2(589.5, 54)
@@ -146,5 +144,5 @@ stream = ExtResource("18_ld6ea")
 script = ExtResource("19_lx6ms")
 
 [connection signal="pressed" from="TextureButton" to="ObjectPositionInisitilaiser" method="_on_button_pressed"]
-[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]
 [connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_pressed"]
+[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]

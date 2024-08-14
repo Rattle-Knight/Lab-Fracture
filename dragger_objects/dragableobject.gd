@@ -6,7 +6,7 @@ var rotating = false
 
 @onready var area = $area
 
-var rotational = 90
+var rotational = self.rotation_degrees
 var delay  = 10
 var dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO

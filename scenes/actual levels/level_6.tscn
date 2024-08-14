@@ -1,0 +1,384 @@
+[gd_scene load_steps=43 format=3 uid="uid://ds70lsrrw8fc8"]
+
+[ext_resource type="Script" path="res://scenes/actual levels/level_1.gd" id="1_027wn"]
+[ext_resource type="PackedScene" uid="uid://8hhj3bbse4wu" path="res://scenes/tablet.tscn" id="2_duqy4"]
+[ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="3_qgebg"]
+[ext_resource type="Texture2D" uid="uid://cgyueb56kqvq8" path="res://levels/tab 01 A.png" id="4_xkmye"]
+[ext_resource type="Texture2D" uid="uid://tb7fr135wl6p" path="res://levels/tab 01 B.png" id="5_b8m2g"]
+[ext_resource type="Texture2D" uid="uid://hs28imqu1kbt" path="res://levels/tab 01 C.png" id="6_tbpl0"]
+[ext_resource type="Texture2D" uid="uid://bcu0xrollf6gw" path="res://levels/tab 01 D.png" id="7_kka7q"]
+[ext_resource type="Texture2D" uid="uid://rpy27atq8g70" path="res://levels/tab 01 E.png" id="8_2b3su"]
+[ext_resource type="Texture2D" uid="uid://7duqghptonpa" path="res://levels/tab 01 end.png" id="9_u1vda"]
+[ext_resource type="PackedScene" uid="uid://vtgbi63pn50x" path="res://dragger_objects/draggerobjectstart.tscn" id="10_ytgyx"]
+[ext_resource type="Texture2D" uid="uid://bthjsjuo6f324" path="res://levels/tab 01 smiley.png" id="11_x7tqf"]
+[ext_resource type="PackedScene" path="res://scenes/labpiece.tscn" id="12_00ubu"]
+[ext_resource type="Texture2D" uid="uid://b6so4ec7ugyf5" path="res://levels/labp/lab 01 A.png" id="13_6bc5c"]
+[ext_resource type="Script" path="res://dragger_objects/labbits/safearea.gd" id="14_uu887"]
+[ext_resource type="Texture2D" uid="uid://c6jy0l0o1mox1" path="res://levels/labp/lab 01 B.png" id="15_4pedi"]
+[ext_resource type="Texture2D" uid="uid://b1sqdl3y8newd" path="res://levels/labp/lab 01 C.png" id="16_inlx1"]
+[ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/lab 01 D.png" id="17_igava"]
+[ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lab 01 E.png" id="18_2q42b"]
+[ext_resource type="Script" path="res://scenes/exit.gd" id="19_8y4gj"]
+[ext_resource type="Texture2D" uid="uid://dngljd0avlram" path="res://levels/labp/exit.jpg" id="20_xidcq"]
+[ext_resource type="PackedScene" uid="uid://dicvig52wy4e7" path="res://scenes/scene_change.tscn" id="21_nuho0"]
+[ext_resource type="AudioStream" uid="uid://oletbvflpsm0" path="res://csfx/yay-6120.mp3" id="22_602ra"]
+[ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="23_qodet"]
+[ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="24_pi8fe"]
+[ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="25_ujnvc"]
+[ext_resource type="AudioStream" uid="uid://dqqtptvulv0lp" path="res://sprites/audio/SFX/Envision.mp3" id="26_johe3"]
+[ext_resource type="PackedScene" uid="uid://lbuu8urm6vif" path="res://scenes/death.tscn" id="27_3rmpg"]
+[ext_resource type="AudioStream" uid="uid://cx60ye873gpvj" path="res://csfx/e-oh-91679.mp3" id="28_ldjki"]
+[ext_resource type="AudioStream" uid="uid://bohkcv4qjq0wl" path="res://csfx/transitional-swipe-211688.mp3" id="29_adqw2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8cr"]
+size = Vector2(127.5, 43.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dulur"]
+size = Vector2(40.731, 38.7243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y63em"]
+size = Vector2(128, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woo50"]
+size = Vector2(128, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o2s4"]
+size = Vector2(40, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyjfc"]
+size = Vector2(90, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kj1r"]
+size = Vector2(128, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vcvu"]
+size = Vector2(89, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmdx4"]
+size = Vector2(67, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk5o3"]
+size = Vector2(127, 124.5)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_11mt2"]
+frequency = 0.0036
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e7tgf"]
+seamless = true
+seamless_blend_skirt = 0.393
+noise = SubResource("FastNoiseLite_11mt2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52adg"]
+shader = ExtResource("23_qodet")
+shader_parameter/scroll = Vector2(0.05, 0.05)
+shader_parameter/distortion_strength = 0.315
+shader_parameter/noise = SubResource("NoiseTexture2D_e7tgf")
+
+[node name="Level 6" type="Node2D"]
+script = ExtResource("1_027wn")
+
+[node name="tablet" parent="." instance=ExtResource("2_duqy4")]
+position = Vector2(-3, 6)
+rotation = 0.121636
+
+[node name="t1" parent="tablet" groups=["pieces"] instance=ExtResource("3_qgebg")]
+position = Vector2(167, 213)
+rotation = 0.785398
+trueimmobile = true
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/t1"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("4_xkmye")
+
+[node name="t2" parent="tablet" groups=["pieces"] instance=ExtResource("3_qgebg")]
+position = Vector2(380, 190)
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/t2"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("5_b8m2g")
+
+[node name="t3" parent="tablet" groups=["pieces"] instance=ExtResource("3_qgebg")]
+position = Vector2(527, 349)
+rotation = 0.785398
+trueimmobile = true
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/t3"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("6_tbpl0")
+
+[node name="t4" parent="tablet" groups=["pieces"] instance=ExtResource("3_qgebg")]
+position = Vector2(206, 370)
+trueimmobile = true
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/t4"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("7_kka7q")
+
+[node name="t5" parent="tablet" groups=["pieces"] instance=ExtResource("3_qgebg")]
+position = Vector2(714, 349)
+rotation = 0.785398
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/t5"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("8_2b3su")
+
+[node name="end" parent="tablet" instance=ExtResource("3_qgebg")]
+position = Vector2(871, 339)
+trueimmobile = true
+
+[node name="Tab01A" type="Sprite2D" parent="tablet/end"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("9_u1vda")
+
+[node name="start" parent="tablet" instance=ExtResource("10_ytgyx")]
+position = Vector2(78, 297)
+
+[node name="start" type="Sprite2D" parent="tablet/start"]
+position = Vector2(-28, 7)
+texture = ExtResource("11_x7tqf")
+
+[node name="lab" type="Node2D" parent="."]
+z_index = -1
+
+[node name="l1" parent="lab" groups=["labs"] instance=ExtResource("12_00ubu")]
+position = Vector2(164, 155)
+
+[node name="Snakep" type="Sprite2D" parent="lab/l1"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("13_6bc5c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l1"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l1/StaticBody2D"]
+position = Vector2(0.25, -41.75)
+shape = SubResource("RectangleShape2D_fq8cr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l1/StaticBody2D"]
+position = Vector2(43, -3.8147e-06)
+rotation = -1.57797
+shape = SubResource("RectangleShape2D_dulur")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="lab/l1/StaticBody2D"]
+position = Vector2(-43, 42)
+rotation = -1.57797
+shape = SubResource("RectangleShape2D_dulur")
+
+[node name="safearea" type="Area2D" parent="lab/l1"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l1/safearea"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="l2" parent="lab" groups=["labs"] instance=ExtResource("12_00ubu")]
+position = Vector2(407, 166)
+
+[node name="line" type="Sprite2D" parent="lab/l2"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("15_4pedi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l2"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l2/StaticBody2D"]
+position = Vector2(0, 21.5)
+shape = SubResource("RectangleShape2D_woo50")
+
+[node name="safearea" type="Area2D" parent="lab/l2"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l2/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="l3" parent="lab" groups=["labs"] instance=ExtResource("12_00ubu")]
+position = Vector2(590, 162)
+
+[node name="sp" type="Sprite2D" parent="lab/l3"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("16_inlx1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l3"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l3/StaticBody2D"]
+position = Vector2(-43, -21)
+shape = SubResource("RectangleShape2D_0o2s4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l3/StaticBody2D"]
+position = Vector2(43, 24)
+shape = SubResource("RectangleShape2D_0o2s4")
+
+[node name="safearea" type="Area2D" parent="lab/l3"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l3/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="l4" parent="lab" groups=["labs"] instance=ExtResource("12_00ubu")]
+position = Vector2(285, 383)
+
+[node name="topd" type="Sprite2D" parent="lab/l4"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("17_igava")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l4"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l4/StaticBody2D"]
+position = Vector2(-19, -4)
+shape = SubResource("RectangleShape2D_hyjfc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="lab/l4/StaticBody2D"]
+position = Vector2(0, 40.5)
+shape = SubResource("RectangleShape2D_8kj1r")
+
+[node name="safearea" type="Area2D" parent="lab/l4"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l4/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="l5" parent="lab" groups=["labs"] instance=ExtResource("12_00ubu")]
+position = Vector2(511, 384)
+
+[node name="lp" type="Sprite2D" parent="lab/l5"]
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("18_2q42b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lab/l5"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l5/StaticBody2D"]
+position = Vector2(19.5, -18.5)
+shape = SubResource("RectangleShape2D_1vcvu")
+
+[node name="safearea" type="Area2D" parent="lab/l5"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/l5/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="start" parent="lab" instance=ExtResource("12_00ubu")]
+position = Vector2(75, 305)
+
+[node name="start" type="Sprite2D" parent="lab/start"]
+position = Vector2(-27, 4)
+texture = ExtResource("11_x7tqf")
+
+[node name="safearea" type="Area2D" parent="lab/start"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/start/safearea"]
+position = Vector2(32.5, 5.5)
+shape = SubResource("RectangleShape2D_vmdx4")
+
+[node name="end" parent="lab" instance=ExtResource("12_00ubu")]
+position = Vector2(867, 344)
+script = ExtResource("19_8y4gj")
+connected_scene = "level_7"
+
+[node name="Tab01A" type="Sprite2D" parent="lab/end"]
+position = Vector2(0, 0.999985)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("20_xidcq")
+
+[node name="safearea" type="Area2D" parent="lab/end"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("14_uu887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/end/safearea"]
+shape = SubResource("RectangleShape2D_y63em")
+
+[node name="sceneChange" parent="lab/end" instance=ExtResource("21_nuho0")]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/end/sceneChange"]
+position = Vector2(0.5, 0.25)
+shape = SubResource("RectangleShape2D_vk5o3")
+
+[node name="yay" type="AudioStreamPlayer2D" parent="lab/end/sceneChange"]
+position = Vector2(-764, -4)
+stream = ExtResource("22_602ra")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="Bbgshad" type="Sprite2D" parent="CanvasLayer"]
+z_index = -20
+material = SubResource("ShaderMaterial_52adg")
+position = Vector2(658, 313)
+texture = ExtResource("24_pi8fe")
+
+[node name="Bbg2" type="Sprite2D" parent="CanvasLayer"]
+z_index = -21
+position = Vector2(695, 350)
+texture = ExtResource("24_pi8fe")
+
+[node name="player" parent="." instance=ExtResource("25_ujnvc")]
+z_index = -1
+position = Vector2(99, 313)
+collision_layer = 32
+collision_mask = 32
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_johe3")
+autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Death" parent="CanvasLayer2" instance=ExtResource("27_3rmpg")]
+z_index = 2
+offset_left = -2.0
+offset_top = -7.0
+offset_right = -2.0
+offset_bottom = -7.0
+connected_scene = "level_6"
+
+[node name="uhoh" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(99, 313)
+stream = ExtResource("28_ldjki")
+bus = &"SFX"
+
+[node name="splat" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(99, 313)
+stream = ExtResource("29_adqw2")
+bus = &"SFX"
+
+[connection signal="entered" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l2/safearea" to="tablet/t2" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l2/safearea" to="tablet/t2" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l3/safearea" to="tablet/t3" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l3/safearea" to="tablet/t3" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_exit"]
+[connection signal="entered" from="lab/l5/safearea" to="tablet/t5" method="_on_safearea_entered"]
+[connection signal="exit" from="lab/l5/safearea" to="tablet/t5" method="_on_safearea_exit"]
+[connection signal="body_entered" from="lab/end/sceneChange" to="lab/end" method="_on_scene_change_body_entered"]

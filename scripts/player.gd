@@ -4,6 +4,7 @@ var speed = 100
 var player_state
 
 @onready var walking_audio = $AudioStreamPlayer2D
+@onready var anim = $AnimationPlayer
 
 
 
@@ -26,22 +27,20 @@ func _physics_process(delta):
 	
 		play_anim(direction)
 	elif Global.playerdead:
-		$AnimatedSprite2D.visible = false
+		$Sprite2D.visible = false
 		$HolloyDead.visible = true
 		
 func play_anim(dir):
 	if player_state == "idle":
-		$AnimatedSprite2D.play("idle")
+		anim.play("RESET")
 		walking_audio.stop()
 	if player_state == "walkingright":
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.play("walk right")
+		anim.play("walkr")
 		if !walking_audio.playing:
 			walking_audio.play()
 			
 	if player_state == "walkingleft":
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.play("walk left")
+		anim.play("walkL")
 		if !walking_audio.playing:
 			walking_audio.play()
 		
