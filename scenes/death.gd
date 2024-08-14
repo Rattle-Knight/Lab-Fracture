@@ -7,6 +7,8 @@ var scene_folder = "res://scenes/actual levels/"
 func _process(_delta):
 	if Global.playerdead:
 		visible = true
+		Global.player_is_ready = false
+		
 
 
 
@@ -15,5 +17,8 @@ func _on_retry_button_pressed():
 	var scene_tree = get_tree()
 	Global.playerdead = false
 	Global.openapp = true
+	Global.player_is_ready = false
+	Global.safe_area_count = 1
 	scene_tree.change_scene_to_file(full_path)
+	
 

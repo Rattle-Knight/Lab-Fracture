@@ -308,17 +308,19 @@ position = Vector2(99, 313)
 collision_layer = 32
 collision_mask = 32
 
-[node name="uhoh" type="AudioStreamPlayer2D" parent="player"]
-stream = ExtResource("26_ktou2")
-bus = &"SFX"
-
-[node name="splat" type="AudioStreamPlayer2D" parent="player"]
-stream = ExtResource("27_wg1mu")
-bus = &"SFX"
-
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("28_y30wa")
 autoplay = true
+
+[node name="uhoh" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(99, 313)
+stream = ExtResource("26_ktou2")
+bus = &"SFX"
+
+[node name="splat" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(99, 313)
+stream = ExtResource("27_wg1mu")
+bus = &"SFX"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 100

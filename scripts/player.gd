@@ -5,6 +5,11 @@ var player_state
 
 @onready var walking_audio = $AudioStreamPlayer2D
 
+
+
+
+
+
 func _physics_process(delta):
 	if not Global.playerdead and Global.downmode:
 		var direction = Input.get_vector("left", "right", "up", "down")
