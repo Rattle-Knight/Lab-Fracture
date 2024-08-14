@@ -1,0 +1,149 @@
+[gd_scene load_steps=20 format=3 uid="uid://kg657anpjbk4"]
+
+[ext_resource type="Script" path="res://scripts/main menu.gd" id="1_3ossj"]
+[ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="3_hfnv0"]
+[ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="4_at0id"]
+[ext_resource type="AudioStream" uid="uid://j8oq11x0iyjw" path="res://sprites/audio/mad scientist.mp3" id="4_e6usn"]
+[ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lab 01 E.png" id="5_hg2wt"]
+[ext_resource type="FontFile" uid="uid://co4seb7vxpbow" path="res://font/Vanilla.ttf" id="6_7jf3i"]
+[ext_resource type="Texture2D" uid="uid://yj15e68hnndy" path="res://levels/labp/lab 01 D.png" id="7_gld25"]
+[ext_resource type="Texture2D" uid="uid://b1sqdl3y8newd" path="res://levels/labp/lab 01 C.png" id="8_rqf64"]
+[ext_resource type="Texture2D" uid="uid://dngljd0avlram" path="res://levels/labp/exit.jpg" id="9_0lyrc"]
+[ext_resource type="PackedScene" uid="uid://8hhj3bbse4wu" path="res://scenes/tablet.tscn" id="10_tqsdo"]
+[ext_resource type="Texture2D" uid="uid://tb7fr135wl6p" path="res://levels/tab 01 B.png" id="11_7lhy2"]
+[ext_resource type="Texture2D" uid="uid://hs28imqu1kbt" path="res://levels/tab 01 C.png" id="12_ipjqb"]
+[ext_resource type="Texture2D" uid="uid://rpy27atq8g70" path="res://levels/tab 01 E.png" id="13_xfuwh"]
+[ext_resource type="Texture2D" uid="uid://7duqghptonpa" path="res://levels/tab 01 end.png" id="14_pkjw3"]
+[ext_resource type="Texture2D" uid="uid://dgoup3cr4mfy1" path="res://sprites/Demo2_sprite_sheet-holloy.png" id="15_l0fc7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vcegq"]
+frequency = 0.0036
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e7tgf"]
+seamless = true
+seamless_blend_skirt = 0.393
+noise = SubResource("FastNoiseLite_vcegq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t35m3"]
+shader = ExtResource("3_hfnv0")
+shader_parameter/scroll = Vector2(0.05, 0.05)
+shader_parameter/distortion_strength = 0.315
+shader_parameter/noise = SubResource("NoiseTexture2D_e7tgf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wnjqo"]
+font = ExtResource("6_7jf3i")
+font_size = 46
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ossj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_e6usn")
+autoplay = true
+
+[node name="Bbgshad" type="Sprite2D" parent="."]
+z_index = -20
+material = SubResource("ShaderMaterial_t35m3")
+position = Vector2(658, 313)
+texture = ExtResource("4_at0id")
+
+[node name="Bbg2" type="Sprite2D" parent="."]
+z_index = -21
+position = Vector2(708, 353)
+texture = ExtResource("4_at0id")
+
+[node name="Lab01E" type="Sprite2D" parent="Bbg2"]
+position = Vector2(-178, 174)
+rotation = -0.483456
+scale = Vector2(0.565, 0.565)
+skew = -0.16057
+texture = ExtResource("5_hg2wt")
+
+[node name="Lab01E2" type="Sprite2D" parent="Bbg2"]
+position = Vector2(-332, -29)
+rotation = 0.756203
+scale = Vector2(0.565, 0.565)
+skew = -0.16057
+texture = ExtResource("7_gld25")
+
+[node name="Exit" type="Sprite2D" parent="Bbg2"]
+position = Vector2(-289, -168)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("9_0lyrc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 191.0
+offset_right = 1223.0
+offset_bottom = 387.0
+text = "Lab Fracture"
+label_settings = SubResource("LabelSettings_wnjqo")
+
+[node name="Lab01E" type="Sprite2D" parent="."]
+position = Vector2(312, 331)
+rotation = -0.483456
+scale = Vector2(0.565, 0.565)
+skew = -0.16057
+texture = ExtResource("5_hg2wt")
+
+[node name="Lab01E2" type="Sprite2D" parent="."]
+position = Vector2(257, 191)
+rotation = 0.756203
+scale = Vector2(0.565, 0.565)
+skew = -0.16057
+texture = ExtResource("7_gld25")
+
+[node name="Lab01E2" type="Sprite2D" parent="Lab01E2"]
+position = Vector2(182.046, -88.894)
+rotation = 0.755728
+scale = Vector2(0.565, 0.565)
+skew = -0.16057
+texture = ExtResource("8_rqf64")
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(259, 65)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("9_0lyrc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="tablet" parent="CanvasLayer" instance=ExtResource("10_tqsdo")]
+position = Vector2(528, 432)
+rotation = -0.260054
+scale = Vector2(0.36, 0.36)
+skew = -0.603884
+
+[node name="Tab01B" type="Sprite2D" parent="CanvasLayer/tablet"]
+position = Vector2(775, 177)
+texture = ExtResource("11_7lhy2")
+
+[node name="Tab01C" type="Sprite2D" parent="CanvasLayer/tablet"]
+position = Vector2(560, 320)
+texture = ExtResource("12_ipjqb")
+
+[node name="Tab01E" type="Sprite2D" parent="CanvasLayer/tablet"]
+position = Vector2(252, 189)
+texture = ExtResource("13_xfuwh")
+
+[node name="Tab01End" type="Sprite2D" parent="CanvasLayer/tablet"]
+position = Vector2(955, 339)
+texture = ExtResource("14_pkjw3")
+
+[node name="Demo2SpriteSheet-holloy" type="Sprite2D" parent="."]
+position = Vector2(370, 307)
+rotation = 0.211185
+scale = Vector2(1.33, 1.33)
+skew = -0.0401426
+texture = ExtResource("15_l0fc7")
+hframes = 5
+vframes = 3
+frame = 11
