@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://bgygj2w23sfxx"]
+[gd_scene load_steps=43 format=3 uid="uid://bgygj2w23sfxx"]
 
 [ext_resource type="PackedScene" uid="uid://8hhj3bbse4wu" path="res://scenes/tablet.tscn" id="1_dvwkj"]
+[ext_resource type="Script" path="res://scenes/actual levels/level_1.gd" id="1_sslnx"]
 [ext_resource type="PackedScene" uid="uid://bejgajpcjfb21" path="res://dragger_objects/draggerobject.tscn" id="2_ajjrt"]
 [ext_resource type="Texture2D" uid="uid://cgyueb56kqvq8" path="res://levels/tab 01 A.png" id="3_7rjl3"]
 [ext_resource type="Texture2D" uid="uid://tb7fr135wl6p" path="res://levels/tab 01 B.png" id="4_f44ne"]
@@ -18,11 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://cb6vp563l0ic3" path="res://levels/labp/lab 01 E.png" id="15_emfbu"]
 [ext_resource type="Shader" path="res://bgs/army_base_sea.gdshader" id="16_gf7l8"]
 [ext_resource type="Texture2D" uid="uid://baolqyrpc017n" path="res://bgs/bbg.png" id="16_kiy6c"]
+[ext_resource type="Texture2D" uid="uid://dngljd0avlram" path="res://levels/labp/exit.jpg" id="18_lvhr8"]
+[ext_resource type="Script" path="res://scenes/exit.gd" id="19_4r0x2"]
 [ext_resource type="PackedScene" uid="uid://c1he760tjlv4h" path="res://scenes/player.tscn" id="19_tgg4n"]
 [ext_resource type="PackedScene" uid="uid://vtgbi63pn50x" path="res://dragger_objects/draggerobjectstart.tscn" id="20_frwf8"]
+[ext_resource type="PackedScene" uid="uid://dicvig52wy4e7" path="res://scenes/scene_change.tscn" id="20_tic0q"]
 [ext_resource type="AudioStream" uid="uid://cx60ye873gpvj" path="res://csfx/e-oh-91679.mp3" id="21_i3sxb"]
 [ext_resource type="AudioStream" uid="uid://bohkcv4qjq0wl" path="res://csfx/transitional-swipe-211688.mp3" id="22_l0c0m"]
 [ext_resource type="AudioStream" uid="uid://dqqtptvulv0lp" path="res://sprites/audio/SFX/Envision.mp3" id="23_pkhgb"]
+[ext_resource type="PackedScene" uid="uid://lbuu8urm6vif" path="res://scenes/death.tscn" id="25_7ktx0"]
+[ext_resource type="AudioStream" uid="uid://oletbvflpsm0" path="res://csfx/yay-6120.mp3" id="27_kxgaf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq8cr"]
 size = Vector2(127.5, 43.5)
@@ -51,6 +57,9 @@ size = Vector2(89, 93)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmdx4"]
 size = Vector2(67, 59)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk5o3"]
+size = Vector2(127, 124.5)
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_11mt2"]
 frequency = 0.0036
 
@@ -66,6 +75,7 @@ shader_parameter/distortion_strength = 0.315
 shader_parameter/noise = SubResource("NoiseTexture2D_e7tgf")
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_sslnx")
 
 [node name="tablet" parent="." instance=ExtResource("1_dvwkj")]
 position = Vector2(-3, 6)
@@ -281,11 +291,12 @@ shape = SubResource("RectangleShape2D_vmdx4")
 
 [node name="end" parent="lab" instance=ExtResource("10_6gi5s")]
 position = Vector2(863, 317)
+script = ExtResource("19_4r0x2")
 
 [node name="Tab01A" type="Sprite2D" parent="lab/end"]
 position = Vector2(0, 0.999985)
 scale = Vector2(0.715, 0.715)
-texture = ExtResource("9_i34yj")
+texture = ExtResource("18_lvhr8")
 
 [node name="safearea" type="Area2D" parent="lab/end"]
 collision_layer = 32
@@ -294,6 +305,18 @@ script = ExtResource("12_nfula")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lab/end/safearea"]
 shape = SubResource("RectangleShape2D_y63em")
+
+[node name="sceneChange" parent="lab/end" instance=ExtResource("20_tic0q")]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lab/end/sceneChange"]
+position = Vector2(0.5, 0.25)
+shape = SubResource("RectangleShape2D_vk5o3")
+
+[node name="yay" type="AudioStreamPlayer2D" parent="lab/end/sceneChange"]
+position = Vector2(-764, -4)
+stream = ExtResource("27_kxgaf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
@@ -327,6 +350,17 @@ bus = &"SFX"
 stream = ExtResource("23_pkhgb")
 autoplay = true
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Death" parent="CanvasLayer2" instance=ExtResource("25_7ktx0")]
+z_index = 2
+offset_left = -2.0
+offset_top = -7.0
+offset_right = -2.0
+offset_bottom = -7.0
+connected_scene = "level_1"
+
 [connection signal="entered" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_entered"]
 [connection signal="exit" from="lab/l1/safearea" to="tablet/t1" method="_on_safearea_exit"]
 [connection signal="entered" from="lab/l2/safearea" to="tablet/t2" method="_on_safearea_entered"]
@@ -337,3 +371,4 @@ autoplay = true
 [connection signal="exit" from="lab/l4/safearea" to="tablet/t4" method="_on_safearea_exit"]
 [connection signal="entered" from="lab/l5/safearea" to="tablet/t5" method="_on_safearea_entered"]
 [connection signal="exit" from="lab/l5/safearea" to="tablet/t5" method="_on_safearea_exit"]
+[connection signal="body_entered" from="lab/end/sceneChange" to="lab/end" method="_on_scene_change_body_entered"]

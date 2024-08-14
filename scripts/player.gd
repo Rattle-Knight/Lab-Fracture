@@ -11,8 +11,10 @@ func _physics_process(delta):
 	
 		if direction.x == 0 and direction.y == 0:
 			player_state = "idle"
-		elif direction.x != 0 or direction.y != 0:
-			player_state = "walking"
+		elif direction.x > 0 or direction.y != 0:
+			player_state = "walkingright"
+		elif direction.x < 0 or direction.y != 0:
+			player_state = "walkingleft"
 	
 		velocity = direction * speed
 		move_and_slide()
@@ -26,8 +28,15 @@ func play_anim(dir):
 	if player_state == "idle":
 		$AnimatedSprite2D.play("idle")
 		walking_audio.stop()
-	if player_state == "walking":
+	if player_state == "walkingright":
 		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("walk right")
+		if !walking_audio.playing:
+			walking_audio.play()
+			
+	if player_state == "walkingleft":
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("walk left")
 		if !walking_audio.playing:
 			walking_audio.play()
 		
@@ -39,4 +48,7 @@ func play_anim(dir):
 			#$AnimatedSprite2D.play("walk left")
 		#if dir.x == -1:
 			#$AnimatedSprite2d.play("walk down")
+
+
+
 

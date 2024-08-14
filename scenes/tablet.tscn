@@ -146,5 +146,5 @@ stream = ExtResource("18_ld6ea")
 script = ExtResource("19_lx6ms")
 
 [connection signal="pressed" from="TextureButton" to="ObjectPositionInisitilaiser" method="_on_button_pressed"]
-[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_pressed"]
 [connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_tikto_pressed"]
+[connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_pressed"]
