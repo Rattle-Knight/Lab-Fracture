@@ -1,4 +1,4 @@
-**Lab Fracture**
+# **Lab Fracture**
 
 Step into the mind-bending world of Lab Fracture, a captivating puzzle game created in just 48 hours! Navigate a stranded scientist through a warped and fragmented laboratory where each room is a self-contained puzzle.
 
@@ -8,4 +8,4 @@ With stunning visuals, increasingly challenging puzzles, and a rich atmosphere, 
 
 Are you ready to fracture reality and solve the ultimate puzzle?
 
-*Itch.io Game link:* https://rattle-knight.itch.io/lab-fracture
+# *Itch.io Game link:* https://rattle-knight.itch.io/lab-fracture
