@@ -13,7 +13,7 @@ var update_pos = false
 
 
 func _process(delta):
-	if update_pos and not downmode:
+	if update_pos and not Global.downmode:
 		#updates and moves down
 		
 		#fill
@@ -26,16 +26,16 @@ func _process(delta):
 		
 		#updating
 		var tween = create_tween()
-		tween.tween_property(parent,"position",Vector2(0,500),0.5)
+		tween.tween_property(parent,"position",parent.position + Vector2(0,500),0.5)
 		update_pos = false
 		warp()
-		downmode = true
+		Global.downmode = true
 		
-	elif update_pos and downmode:
+	elif update_pos and Global.downmode:
 		#moves it back up
 		var tween = create_tween()
 		tween.tween_property(parent,"position",Vector2(0,0),0.5)
-		downmode = false
+		Global.downmode = false
 		update_pos = false
 		
 		

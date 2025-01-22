@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://xajyua0o5f2t"]
+[gd_scene load_steps=24 format=3 uid="uid://8hhj3bbse4wu"]
 
 [ext_resource type="Script" path="res://dragger_objects/ObjectPositionInisitilaiser.gd" id="1_0sn15"]
 [ext_resource type="Texture2D" uid="uid://bvsxeewepcho4" path="res://dragger_objects/tab2.png" id="2_bv35t"]
@@ -17,6 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://dnymoimgaflrq" path="res://dragger_objects/click.mp3" id="12_cty6k"]
 [ext_resource type="Texture2D" uid="uid://d3to4mxyahaiu" path="res://dragger_objects/tab_app_3_click.png" id="12_sak6y"]
 [ext_resource type="Texture2D" uid="uid://b87o8eyiq17ir" path="res://dragger_objects/tab_app_4_click.png" id="14_7tl83"]
+[ext_resource type="AudioStream" uid="uid://cdivsluw886yf" path="res://sprites/audio/SFX/infographic-swipe-1-184021 (mp3cut.net).mp3" id="18_ld6ea"]
+[ext_resource type="Script" path="res://scenes/whoosh.gd" id="19_lx6ms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64nma"]
 size = Vector2(1069, 27)
@@ -53,8 +55,6 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="bounds" type="StaticBody2D" parent="."]
-collision_layer = 33
-collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bounds"]
 position = Vector2(589.5, 54)
@@ -138,6 +138,10 @@ texture = ExtResource("11_sw67u")
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_cty6k")
+
+[node name="whoosh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_ld6ea")
+script = ExtResource("19_lx6ms")
 
 [connection signal="pressed" from="TextureButton" to="ObjectPositionInisitilaiser" method="_on_button_pressed"]
 [connection signal="pressed" from="saver_of_worlds" to="ObjectPositionInisitilaiser" method="_on_pressed"]
