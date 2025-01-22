@@ -1,9 +1,12 @@
+
 [gd_scene load_steps=33 format=3 uid="uid://c1he760tjlv4h"]
+
+
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ep2gg"]
 [ext_resource type="Texture2D" uid="uid://dgoup3cr4mfy1" path="res://sprites/Demo2_sprite_sheet-holloy.png" id="2_pxxiv"]
 [ext_resource type="AudioStream" uid="uid://ccn8khtccl8c1" path="res://sprites/audio/SFX/stone-steps-6748.mp3" id="3_g1s5p"]
-[ext_resource type="Texture2D" uid="uid://dl7u16b1sd3ka" path="res://sprites/holloy_DEAD.png" id="4_rrc38"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_io0qe"]
 atlas = ExtResource("2_pxxiv")
@@ -251,9 +254,11 @@ collision_layer = 5
 script = ExtResource("1_ep2gg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
 visible = false
 position = Vector2(0, -3)
 scale = Vector2(0.5, 0.5)
+
 sprite_frames = SubResource("SpriteFrames_2be72")
 animation = &"walk right"
 frame_progress = 0.382336
@@ -265,6 +270,7 @@ shape = SubResource("CircleShape2D_aalsw")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_g1s5p")
 bus = &"SFX"
+
 
 [node name="HolloyDead" type="Sprite2D" parent="."]
 visible = false
@@ -291,3 +297,4 @@ texture = ExtResource("2_pxxiv")
 hframes = 5
 vframes = 3
 frame = 4
+

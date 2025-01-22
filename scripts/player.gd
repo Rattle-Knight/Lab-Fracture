@@ -11,7 +11,11 @@ var player_state
 
 
 
+func _ready():
+	$dead.visible = false
+
 func _physics_process(delta):
+
 	if not Global.playerdead and Global.downmode:
 		var direction = Input.get_vector("left", "right", "up", "down")
 	
@@ -21,11 +25,14 @@ func _physics_process(delta):
 			player_state = "walkingright"
 		elif direction.x < 0 or direction.y != 0:
 			player_state = "walkingleft"
+
 	
-		velocity = direction * speed
-		move_and_slide()
+	velocity = direction * speed
+	move_and_slide()
 	
+
 		play_anim(direction)
+
 	elif Global.playerdead:
 		$Sprite2D.visible = false
 		$HolloyDead.visible = true
@@ -43,6 +50,18 @@ func play_anim(dir):
 		anim.play("walkL")
 		if !walking_audio.playing:
 			walking_audio.play()
+
+
+func play_anim(dir):
+	if not Global.playerdead:
+		if player_state == "idle":
+			$AnimatedSprite2D.play("idle")
+			walking_audio.stop()
+		if player_state == "walking":
+			$AnimatedSprite2D.stop()
+			if !walking_audio.playing:
+				walking_audio.play()
+
 		
 		#if dir.y == -1:
 			#$AnimatedSprite2D.play("walk up")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc2w0dmpftfc4"
-path="res://.godot/imported/menu dark.png-3c926fb637b9d0c24a49e597645dea2b.ctex"
+uid="uid://cich5b2gbbsvm"
+path="res://.godot/imported/holloy_DEAD.png-42c0f2ea8dc841e1a481ae08ddf6d3ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu dark.png"
-dest_files=["res://.godot/imported/menu dark.png-3c926fb637b9d0c24a49e597645dea2b.ctex"]
+source_file="res://sprites/scientis/holloy_DEAD.png"
+dest_files=["res://.godot/imported/holloy_DEAD.png-42c0f2ea8dc841e1a481ae08ddf6d3ad.ctex"]
 
 [params]
 

@@ -3,7 +3,6 @@ extends Area2D
 @onready var player = get_tree().get_first_node_in_group("player") 
 var safe_area_count = 0
 
-
 signal player_died
 signal entered
 signal exit
@@ -17,6 +16,8 @@ func _on_scene_loaded():
 	Global.safe_area_count = 0
 	Global.player_is_ready = true
 
+
+
 func _on_body_entered(body):
 	if body == player and Global.player_is_ready:
 		Global.safe_area_count += 1
@@ -27,14 +28,10 @@ func _on_body_exited(body):
 	if body == player and Global.player_is_ready:
 		Global.safe_area_count -= 1
 		if Global.safe_area_count == 0:
+
 			var deathsfx = $"../../../splat"
 			var deathuhoh = $"../../../uhoh"
+
 			emit_signal("player_died")
-			Global.playerdead = true
-			deathuhoh.play()
-			deathsfx.play()
-			await deathuhoh.finished
 			player.queue_free()  # Kill the player
-			
-			
 		emit_signal("exit")

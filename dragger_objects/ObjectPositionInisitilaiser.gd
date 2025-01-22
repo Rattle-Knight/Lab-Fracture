@@ -1,6 +1,7 @@
 extends Node
 
 var downmode = false
+@onready var crt = $"../crt"
 
 var labs : Array
 var pieces : Array
@@ -8,6 +9,8 @@ var tabletpieces = []
 
 var update_pos = false
 @onready var parent = get_parent()
+
+
 
 func _process(delta):
 	if update_pos and not Global.downmode:
